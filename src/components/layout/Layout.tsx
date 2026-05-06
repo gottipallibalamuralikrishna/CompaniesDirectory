@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
+import { AppBar, Typography, Box } from "@mui/material";
 import logo from "../../assets/CompanyHub.png";
 import { useCompanies } from "../../context/CompanyContext";
 
