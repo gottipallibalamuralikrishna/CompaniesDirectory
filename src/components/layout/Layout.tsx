@@ -3,7 +3,6 @@ import logo from "../../assets/CompanyHub.png";
 import { useCompanies } from "../../context/CompanyContext";
 
 export default function Layout({ children }: any) {
-  const { view, setView } = useCompanies();
   return (
     <>
       <AppBar
