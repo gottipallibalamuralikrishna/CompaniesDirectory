@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { getCompanies } from "../services/api";
 
 type Company = {
   id: string;
@@ -53,11 +54,12 @@ export const CompanyProvider = ({ children }: any) => {
       return { ...prev, sort: next };
     });
   };
-  // ✅ FETCH FROM API
+
   useEffect(() => {
-    fetch("http://localhost:3001/companies")
-      .then((res) => res.json())
-      .then((data) => {
+    setLoading(true);
+
+    getCompanies()
+      .then((data: any) => {
         setCompanies(data);
         setFiltered(data);
         setLoading(false);
